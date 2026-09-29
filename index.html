@@ -133,9 +133,8 @@ async function addWizyToMetaMask() {
   const tokenAddress = "0x4319CD329B24f21B59724EbdEE35D45109450729";
 
   if (!window.ethereum) {
-    window.location.href =
-      "https://metamask.app.link/dapp/holywizy888-star.github.io/Holywizy/";
-    return;
+  alert("MetaMask wallet connection is not available on this page. Please open the WIZY website in the MetaMask browser and try again.");
+  return;
   }
 
   try {
