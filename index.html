@@ -128,24 +128,42 @@
       HolyWizy is a community project. Nothing on this website is financial advice or a promise of future value.
     </footer>
   </main>
-  <script>
-async function addWizyToMetaMask() {
-  const tokenAddress = "0x4319CD329B24f21B59724EbdEE35D45109450729";
+  <script type="module">
+import { createEVMClient } from "https://esm.unpkg.com/@metamask/connect-evm@2.1.1";
 
-  if (!window.ethereum) {
-  alert("MetaMask wallet connection is not available on this page. Please open the WIZY website in the MetaMask browser and try again.");
-  return;
+const evmClient = await createEVMClient({
+  dapp: {
+    name: "HolyWizy",
+    url: "https://holywizy888-star.github.io/Holywizy/",
+    iconUrl: "https://holywizy888-star.github.io/Holywizy/holywizy-logo.png"
+  },
+  api: {
+    supportedNetworks: {
+      "0x8f": "https://rpc.monad.xyz"
+    }
+  },
+  analytics: {
+    enabled: false
   }
+});
+
+window.addWizyToMetaMask = async function () {
+  const tokenAddress = "0x4319CD329B24f21B59724EbdEE35D45109450729";
+  const provider = evmClient.getProvider();
 
   try {
+    await evmClient.connect({
+      chainIds: ["0x8f"]
+    });
+
     try {
-      await window.ethereum.request({
+      await provider.request({
         method: "wallet_switchEthereumChain",
         params: [{ chainId: "0x8f" }]
       });
     } catch (switchError) {
       if (switchError.code === 4902) {
-        await window.ethereum.request({
+        await provider.request({
           method: "wallet_addEthereumChain",
           params: [{
             chainId: "0x8f",
@@ -164,7 +182,7 @@ async function addWizyToMetaMask() {
       }
     }
 
-    const added = await window.ethereum.request({
+    const added = await provider.request({
       method: "wallet_watchAsset",
       params: {
         type: "ERC20",
@@ -182,9 +200,9 @@ async function addWizyToMetaMask() {
     }
   } catch (error) {
     console.error(error);
-    alert("MetaMask request was cancelled or could not be completed.");
+    alert("MetaMask connection was cancelled or could not be completed.");
   }
-}
-  </script>
+};
+</script>
 </body>
 </html>
