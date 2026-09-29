@@ -114,11 +114,78 @@
     <a class="pill" href="https://monadscan.com/token/0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank">
       WIZY on MonadScan
     </a>
+    <button
+  class="pill"
+  type="button"
+  onclick="addWizyToMetaMask()"
+  style="cursor:pointer;background:transparent;color:var(--cyan);"
+>
+  🦊 Add WIZY to MetaMask
+    </button>
   </div>
 </section>
     <footer>
       HolyWizy is a community project. Nothing on this website is financial advice or a promise of future value.
     </footer>
   </main>
+  <script>
+async function addWizyToMetaMask() {
+  const tokenAddress = "0x4319CD329B24f21B59724EbdEE35D45109450729";
+
+  if (!window.ethereum) {
+    window.location.href =
+      "https://metamask.app.link/dapp/holywizy888-star.github.io/Holywizy/";
+    return;
+  }
+
+  try {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x8f" }]
+      });
+    } catch (switchError) {
+      if (switchError.code === 4902) {
+        await window.ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [{
+            chainId: "0x8f",
+            chainName: "Monad Mainnet",
+            nativeCurrency: {
+              name: "MON",
+              symbol: "MON",
+              decimals: 18
+            },
+            rpcUrls: ["https://rpc.monad.xyz"],
+            blockExplorerUrls: ["https://monadscan.com"]
+          }]
+        });
+      } else {
+        throw switchError;
+      }
+    }
+
+    const added = await window.ethereum.request({
+      method: "wallet_watchAsset",
+      params: {
+        type: "ERC20",
+        options: {
+          address: tokenAddress,
+          symbol: "HOLYWIZY",
+          decimals: 18,
+          image: "https://holywizy888-star.github.io/Holywizy/holywizy-logo.png"
+        }
+      }
+    });
+
+    if (added) {
+      alert("WIZY added to MetaMask!");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("MetaMask request was cancelled or could not be completed.");
+  }
+}
+  </script>
 </body>
 </html>
