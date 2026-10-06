@@ -3,59 +3,117 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="HolyWizy (WIZY) is a community coin on Monad created for fun, experiments, and the HolyWizy community." />
-  <title>HolyWizy (WIZY) — Official</title>
+  <meta name="description" content="HolyWizy is the official home of Wizy (HOLYWIZY), a community token on Monad." />
+  <title>HolyWizy — Wizy (HOLYWIZY) on Monad</title>
   <link rel="icon" type="image/svg+xml" href="holywizy-icon-32.svg" />
   <style>
-    :root { color-scheme: dark; --bg:#080a18; --card:#11152c; --text:#f6f7ff; --muted:#aeb6dd; --cyan:#1ee7ff; --purple:#8a56ff; }
+    :root { color-scheme:dark; --bg:#080a18; --card:#11152c; --text:#f6f7ff; --muted:#aeb6dd; --cyan:#1ee7ff; --purple:#8a56ff; --gold:#ffd45c; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:radial-gradient(circle at top,#17255d 0,#080a18 44%,#050610 100%); color:var(--text); min-height:100vh; }
-    .wrap { width:min(760px,92%); margin:0 auto; padding:54px 0 44px; text-align:center; }
-    .logo { width:min(330px,78vw); aspect-ratio:1; border-radius:50%; display:block; margin:0 auto 22px; box-shadow:0 0 40px rgba(30,231,255,.18); }
+    .wrap { width:min(820px,92%); margin:0 auto; padding:46px 0 44px; text-align:center; }
+    .logo { width:min(300px,72vw); aspect-ratio:1; border-radius:50%; display:block; margin:0 auto 20px; box-shadow:0 0 44px rgba(30,231,255,.22); }
     h1 { margin:0; font-size:clamp(38px,8vw,68px); letter-spacing:-.03em; }
-    .ticker { color:var(--cyan); font-weight:800; letter-spacing:.12em; margin-top:6px; }
-    .tagline { color:var(--muted); font-size:18px; line-height:1.55; margin:24px auto 30px; max-width:620px; }
-    .card { background:rgba(17,21,44,.82); border:1px solid rgba(138,86,255,.35); border-radius:20px; padding:24px; margin:18px 0; text-align:left; backdrop-filter:blur(8px); }
+    .ticker { color:var(--cyan); font-weight:900; letter-spacing:.12em; margin-top:7px; }
+    .subticker { color:var(--muted); font-size:13px; margin-top:7px; }
+    .tagline { color:var(--muted); font-size:18px; line-height:1.55; margin:22px auto 24px; max-width:650px; }
+    .badges { margin-bottom:18px; }
+    .pill { display:inline-block; border:1px solid rgba(30,231,255,.4); color:#dffcff; border-radius:999px; padding:9px 14px; margin:5px; font-size:14px; text-decoration:none; background:transparent; }
+    .cta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:22px 0 26px; }
+    .cta a,.cta button { display:flex; align-items:center; justify-content:center; min-height:52px; border-radius:14px; padding:12px 14px; font-weight:800; font-size:15px; cursor:pointer; text-decoration:none; border:1px solid rgba(30,231,255,.42); color:#f7fdff; background:linear-gradient(135deg,rgba(30,231,255,.15),rgba(138,86,255,.2)); }
+    .cta .primary { border-color:rgba(255,212,92,.6); background:linear-gradient(135deg,rgba(255,212,92,.2),rgba(138,86,255,.28)); }
+    .card { background:rgba(17,21,44,.84); border:1px solid rgba(138,86,255,.35); border-radius:20px; padding:24px; margin:18px 0; text-align:left; backdrop-filter:blur(8px); }
     .card h2 { margin:0 0 14px; font-size:21px; }
     .label { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:7px; }
-    .value { overflow-wrap:anywhere; font-size:15px; line-height:1.45; }
+    .value { overflow-wrap:anywhere; font-size:15px; line-height:1.5; }
     a { color:var(--cyan); }
-    .pill { display:inline-block; border:1px solid rgba(30,231,255,.4); color:#dffcff; border-radius:999px; padding:8px 13px; margin:5px; font-size:14px; }
+    .facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:12px; }
+    .fact { background:rgba(8,10,24,.48); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:15px; }
+    .fact strong { display:block; font-size:16px; margin-top:4px; overflow-wrap:anywhere; }
+    .status { display:flex; gap:10px; align-items:flex-start; margin:12px 0; }
+    .check { color:#65f2a5; font-weight:900; }
+    .roadmap { margin:0; padding-left:22px; color:var(--muted); line-height:1.65; }
+    .roadmap strong { color:var(--text); }
+    .copy { background:#11152c; color:var(--cyan); border:1px solid var(--cyan); border-radius:999px; padding:10px 16px; font-weight:700; cursor:pointer; margin-top:12px; }
     footer { color:#7f88ae; font-size:13px; line-height:1.55; margin-top:32px; }
+    @media (max-width:560px) { .cta,.facts { grid-template-columns:1fr; } .wrap { padding-top:34px; } }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <img class="logo" src="holywizy-logo.png" alt="HolyWizy WIZY logo" />
+    <img class="logo" src="holywizy-logo.png" alt="HolyWizy wizard logo" />
     <h1>HolyWizy</h1>
     <div class="ticker">WIZY</div>
-    <p class="tagline">HolyWizy is a community coin on the Monad network, created for fun, experiments, and the HolyWizy community. No promises and no guaranteed value.</p>
+    <div class="subticker">On-chain token: Wizy · Symbol: HOLYWIZY</div>
+    <p class="tagline">A wizard-themed community token on Monad built around community participation, experimentation, memes and entertainment. No promises, no guaranteed returns — just WIZY growing one step at a time.</p>
 
-    <div>
+    <div class="badges">
       <span class="pill">Monad</span>
-      <span class="pill">Community Coin</span>
-      <span class="pill">WIZY</span>
+      <span class="pill">1B Fixed Supply</span>
+      <span class="pill">Community Token</span>
+    </div>
+
+    <div class="cta">
+      <button class="primary" type="button" onclick="copyAndOpenFling()">🪄 Buy / Trade on Fling</button>
+      <a href="https://dexscreener.com/search?q=0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank" rel="noopener">📈 View Chart</a>
+      <a href="https://monadscan.com/token/0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank" rel="noopener">🔎 View on MonadScan</a>
+      <button type="button" onclick="addWizyToMetaMask()">🦊 Add to MetaMask</button>
     </div>
 
     <section class="card">
-  <h2>Official Token Information</h2>
-  <div class="label">Contract address</div>
+      <h2>WIZY Facts</h2>
+      <div class="facts">
+        <div class="fact"><div class="label">Project brand</div><strong>HolyWizy / WIZY</strong></div>
+        <div class="fact"><div class="label">On-chain token</div><strong>Wizy (HOLYWIZY)</strong></div>
+        <div class="fact"><div class="label">Network</div><strong>Monad · Chain 143</strong></div>
+        <div class="fact"><div class="label">Max supply</div><strong>1,000,000,000</strong></div>
+        <div class="fact"><div class="label">Decimals</div><strong>18</strong></div>
+        <div class="fact"><div class="label">Launch date</div><strong>September 28, 2026</strong></div>
+      </div>
+    </section>
 
-  <div class="value">
-    <a href="https://monadscan.com/token/0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank">
-      0x4319CD329B24f21B59724EbdEE35D45109450729
-    </a>
-  </div>
+    <section class="card">
+      <h2>Official Contract</h2>
+      <div class="label">Always verify before trading</div>
+      <div class="value">
+        <a href="https://monadscan.com/token/0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank" rel="noopener">0x4319CD329B24f21B59724EbdEE35D45109450729</a>
+      </div>
+      <button class="copy" type="button" onclick="copyContract(this)">Copy Contract</button>
+    </section>
 
-  <br>
+    <section class="card">
+      <h2>Project Status</h2>
+      <div class="status"><span class="check">✓</span><div><strong>MonadScan</strong><br><span class="value">Official WIZY branding and token information are live.</span></div></div>
+      <div class="status"><span class="check">✓</span><div><strong>MetaMask metadata</strong><br><span class="value">WIZY icon and metadata submitted to MetaMask for review in <a href="https://github.com/MetaMask/contract-metadata/pull/1991" target="_blank" rel="noopener">PR #1991</a>.</span></div></div>
+      <div class="status"><span class="check">✓</span><div><strong>Official community channels</strong><br><span class="value">Website, X and Telegram are active.</span></div></div>
+      <div class="value" style="margin-top:14px;color:var(--muted);">Wallets and security providers may still display volatility or risk warnings while WIZY is a small, newly launched token.</div>
+    </section>
 
-  <button
-    type="button"
-    onclick="navigator.clipboard.writeText('0x4319CD329B24f21B59724EbdEE35D45109450729'); this.textContent='Copied ✓';"
-    style="background:#11152c;color:#1ee7ff;border:1px solid #1ee7ff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;">
-    Copy Contract
-  </button>
-</section>
+    <section class="card">
+      <h2>Roadmap</h2>
+      <ol class="roadmap">
+        <li><strong>Foundation:</strong> launch WIZY, publish official website and verify explorer information. ✓</li>
+        <li><strong>Discovery:</strong> improve wallet, chart and token-directory metadata.</li>
+        <li><strong>Community:</strong> grow WIZY through memes, content, community challenges and holder milestones.</li>
+        <li><strong>Expansion:</strong> add useful community features as the project grows — without promising price or returns.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Official Links</h2>
+      <div>
+        <a class="pill" href="https://x.com/WizyCoin" target="_blank" rel="noopener">WIZY on X</a>
+        <a class="pill" href="https://t.me/WizyCoin" target="_blank" rel="noopener">WIZY Telegram</a>
+        <a class="pill" href="https://monadscan.com/token/0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank" rel="noopener">MonadScan</a>
+        <a class="pill" href="https://fling.family/" target="_blank" rel="noopener">Fling</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Official Assets</h2>
+      <div class="value"><a href="holywizy-logo.png" target="_blank">Full HolyWizy Logo</a></div><br>
+      <div class="value"><a href="holywizy-icon-32.png" target="_blank">32×32 PNG Icon</a></div><br>
+      <div class="value"><a href="holywizy-icon-32.svg" target="_blank">32×32 SVG Icon</a></div>
+    </section>
 
     <section class="card">
       <h2>Contact</h2>
@@ -63,146 +121,87 @@
       <div class="value"><a href="mailto:Holywizy888@gmail.com">Holywizy888@gmail.com</a></div>
     </section>
 
-    <section class="card">
-  <h2>Official Assets</h2>
-
-  <div class="value">
-    <a href="holywizy-logo.png" target="_blank">Full HolyWizy PNG Logo</a>
-  </div>
-
-  <br>
-
-  <div class="value">
-    <a href="holywizy-icon-32.png" target="_blank">32×32 PNG Icon</a>
-  </div>
-
-  <br>
-
-  <div class="value">
-    <a href="holywizy-icon-32.svg" target="_blank">32×32 SVG Icon</a>
-  </div>
-</section>
-<section class="card">
-  <h2>Project Status</h2>
-
-  <div class="label">MonadScan</div>
-  <div class="value">Official token information submitted for review.</div>
-
-  <br>
-
-  <div class="label">MetaMask / Blockaid</div>
-  <div class="value">Security classification reviewed. Risk warning currently remains due to the token's high-volatility profile.</div>
-
-  <br>
-
-  <div class="label">Network</div>
-  <div class="value">Monad</div>
-</section>
-
-<section class="card">
-  <h2>Official Links</h2>
-
-  <div>
-    
-<a class="pill" href="https://x.com/WizyCoin" target="_blank">
-  Follow WIZY on X
-</a>
-    <a class="pill" href="https://t.me/WizyCoin" target="_blank">
-      Join HolyWizy Telegram
-    </a>
-
-    <a class="pill" href="https://monadscan.com/token/0x4319CD329B24f21B59724EbdEE35D45109450729" target="_blank">
-      WIZY on MonadScan
-    </a>
-    <button
-  class="pill"
-  type="button"
-  onclick="addWizyToMetaMask()"
-  style="cursor:pointer;background:transparent;color:var(--cyan);"
->
-  🦊 Add WIZY to MetaMask
-    </button>
-  </div>
-</section>
-    <footer>
-      HolyWizy is a community project. Nothing on this website is financial advice or a promise of future value.
-    </footer>
+    <footer>HolyWizy is a community project. Nothing on this website is financial advice, an offer, or a promise of future value. Crypto assets can be highly volatile and may lose all value.</footer>
   </main>
+
+  <script>
+    const tokenAddress = "0x4319CD329B24f21B59724EbdEE35D45109450729";
+
+    function copyContract(button) {
+      navigator.clipboard.writeText(tokenAddress);
+      const old = button.textContent;
+      button.textContent = "Copied ✓";
+      setTimeout(() => button.textContent = old, 1800);
+    }
+
+    async function copyAndOpenFling() {
+      try { await navigator.clipboard.writeText(tokenAddress); } catch (_) {}
+      window.open("https://fling.family/", "_blank", "noopener");
+    }
+  </script>
+
   <script type="module">
-import { createEVMClient } from "https://esm.unpkg.com/@metamask/connect-evm@2.1.1";
+    import { createEVMClient } from "https://esm.unpkg.com/@metamask/connect-evm@2.1.1";
 
-const evmClient = await createEVMClient({
-  dapp: {
-    name: "HolyWizy",
-    url: "https://holywizy888-star.github.io/Holywizy/",
-    iconUrl: "https://holywizy888-star.github.io/Holywizy/holywizy-logo.png"
-  },
-  api: {
-    supportedNetworks: {
-      "0x8f": "https://rpc.monad.xyz"
-    }
-  },
-  analytics: {
-    enabled: false
-  }
-});
-
-window.addWizyToMetaMask = async function () {
-  const tokenAddress = "0x4319CD329B24f21B59724EbdEE35D45109450729";
-  const provider = evmClient.getProvider();
-
-  try {
-    await evmClient.connect({
-      chainIds: ["0x8f"]
-    });
-
-    try {
-      await provider.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x8f" }]
-      });
-    } catch (switchError) {
-      if (switchError.code === 4902) {
-        await provider.request({
-          method: "wallet_addEthereumChain",
-          params: [{
-            chainId: "0x8f",
-            chainName: "Monad Mainnet",
-            nativeCurrency: {
-              name: "MON",
-              symbol: "MON",
-              decimals: 18
-            },
-            rpcUrls: ["https://rpc.monad.xyz"],
-            blockExplorerUrls: ["https://monadscan.com"]
-          }]
-        });
-      } else {
-        throw switchError;
-      }
-    }
-
-    const added = await provider.request({
-      method: "wallet_watchAsset",
-      params: {
-        type: "ERC20",
-        options: {
-          address: tokenAddress,
-          symbol: "HOLYWIZY",
-          decimals: 18,
-          image: "https://holywizy888-star.github.io/Holywizy/holywizy-logo.png"
+    const evmClient = await createEVMClient({
+      dapp: {
+        name: "HolyWizy",
+        url: "https://holywizy888-star.github.io/Holywizy/",
+        iconUrl: "https://holywizy888-star.github.io/Holywizy/holywizy-logo.png"
+      },
+      api: {
+        supportedNetworks: {
+          "0x8f": "https://rpc.monad.xyz"
         }
-      }
+      },
+      analytics: { enabled: false }
     });
 
-    if (added) {
-      alert("WIZY added to MetaMask!");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("MetaMask connection was cancelled or could not be completed.");
-  }
-};
-</script>
+    window.addWizyToMetaMask = async function () {
+      const provider = evmClient.getProvider();
+      try {
+        await evmClient.connect({ chainIds: ["0x8f"] });
+        try {
+          await provider.request({
+            method: "wallet_switchEthereumChain",
+            params: [{ chainId: "0x8f" }]
+          });
+        } catch (switchError) {
+          if (switchError.code === 4902) {
+            await provider.request({
+              method: "wallet_addEthereumChain",
+              params: [{
+                chainId: "0x8f",
+                chainName: "Monad Mainnet",
+                nativeCurrency: { name: "MON", symbol: "MON", decimals: 18 },
+                rpcUrls: ["https://rpc.monad.xyz"],
+                blockExplorerUrls: ["https://monadscan.com"]
+              }]
+            });
+          } else {
+            throw switchError;
+          }
+        }
+
+        const added = await provider.request({
+          method: "wallet_watchAsset",
+          params: {
+            type: "ERC20",
+            options: {
+              address: tokenAddress,
+              symbol: "HOLYWIZY",
+              decimals: 18,
+              image: "https://holywizy888-star.github.io/Holywizy/holywizy-logo.png"
+            }
+          }
+        });
+
+        if (added) alert("WIZY added to MetaMask!");
+      } catch (error) {
+        console.error(error);
+        alert("MetaMask connection was cancelled or could not be completed.");
+      }
+    };
+  </script>
 </body>
 </html>
